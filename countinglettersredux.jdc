@@ -1,0 +1,36 @@
+println("Please write a text: ");
+String text = readLine();
+int textlen = text.length();
+int count = 0;
+String requested = "";
+boolean stop = false;
+int reqlen;
+while(!stop)
+{
+	println("Which letter would you like to count now?");
+	String tocheck = readLine();
+	char tochck = tocheck.charAt(0);
+	requested = requested + tocheck;
+	for(int k = 0; k<textlen; k++)
+	{
+		if(text.charAt(k) == tochck)
+		{
+			count++;
+		}
+	}
+	println("There are "+count+ " in your text.");
+	count = 0;
+	reqlen = requested.length();
+	for(int i = 0; i<reqlen; i++)
+	{
+		for(int j = i+1; j<reqlen; j++)
+		{
+			if(requested.charAt(i) == requested.charAt(j))
+			{
+				stop = true;
+				println("Repeated character. Exiting program...");
+				println("Thank you for your cooperation. Good bye!");
+			}
+		}
+	}
+}

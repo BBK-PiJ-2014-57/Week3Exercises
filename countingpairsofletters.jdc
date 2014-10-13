@@ -1,0 +1,40 @@
+println("Please enter some text for comparison:");
+String tester = readLine();
+println("Please enter some text to be tested:");
+String tbtested = readLine();
+int testerlen = tester.length();
+int tbtestedlen = tbtested.length();
+int count = 0;
+while(testerlen>tbtestedlen)
+{
+	println("This won't work if your second string is shorter than the first");
+	println("Please enter the tested text again");
+	tbtested = readLine();
+	tbtestedlen = tbtested.length();
+}
+boolean same = true;
+for(int i = 0; i<tbtestedlen; i++)
+{
+	for(int j = 0; j<testerlen; j++)
+	{
+		if(i + j <tbtestedlen)
+		{
+			char a = tester.charAt(j);
+			char b = tbtested.charAt(i+j);
+			if(a!=b)
+			{
+				same = same && false;
+			}
+		}
+		else
+		{
+			same = false;
+		}
+	}
+	if(same)
+	{
+		count++;
+	}
+	same = true;
+}
+println(tester + " appeared " + count + " times in the input string");			

@@ -1,0 +1,40 @@
+println("Welcome to the Calculator! Please enter 2 values and you will be presented with a series of calculation options");
+String first = readLine();
+println("And the next:");
+String second = readLine();
+double fstdub = Double.parseDouble(first);
+double snddub = Double.parseDouble(second);
+println("Please choose an operation: 1) + 2) - 3) x 4) /");
+String operation = readLine();
+switch(operation)
+{
+	case "1":
+	case "+":
+	println(fstdub + snddub);
+	break;
+	
+	case "2":
+	case "-":
+	println(fstdub - snddub);
+	break;
+	
+	case "3":
+	case "x":
+	println(fstdub*snddub);
+	break;
+	
+	case "4":
+	case "/":
+	if(snddub == 0)
+	{
+		while(snddub ==0)
+		{
+			println("Cannot divide by 0. Please enter another number:");
+			second = readLine();
+			snddub = Double.parseDouble(second);
+		}
+	}
+	println(fstdub / snddub);
+	break;
+}
+		

@@ -1,0 +1,8 @@
+println("Please enter some text for the Palindrome creator");
+String input = readLine();
+int inputlen = input.length();
+for(int i = inputlen-1; i>=0; i--)
+{
+	input = input+input.charAt(i);
+}
+println(input);

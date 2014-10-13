@@ -1,0 +1,150 @@
+println("Please let me work out how much change you are due. How much did it cost?");
+String coststr = readLine();
+double cost = Double.parseDouble(coststr);
+while(cost<0)
+{
+	println("You cannot spend a negative amount. Please enter a new cost:");
+	coststr = readLine();
+	cost = Double.parseDouble(coststr);
+}
+print("Great. What did you pay with?");
+String paystr = readLine();
+double pay = Double.parseDouble(paystr);
+while(pay<cost)
+{
+	println("You have not paid enough to pay for this item. Please get more money and re-enter:");
+	paystr = readLine();
+	pay = Double.parseDouble(paystr);
+}
+double change = pay - cost;
+
+String output = "";
+int num50 = 0;
+int num20 = 0;
+int num10 = 0;
+int num5 = 0;
+int num2 = 0;
+int num1 = 0;
+int numpt50 = 0;
+int numpt20 = 0;
+int numpt10 = 0;
+int numpt05 = 0;
+int numpt02 = 0;
+int numpt01 = 0;
+while(Math.abs(change-0)> 10E-6)
+{
+	
+	if(change >= 50)
+	{
+		num50++;
+		change = change - 50;
+	}
+	if(change >= 20)
+	{
+		num20++;
+		change = change - 20;
+	}
+	if(change >= 10)
+	{
+		num10++;
+		change = change - 10;
+	}
+	if(change >=5)
+	{
+		num5++;
+		change = change - 5;
+	}
+	if(change >=2)
+	{
+		
+		num2++;
+		change = change - 2;
+	}
+	if(change >=1)
+	{
+		 num1++;
+		 change = change - 1;
+	}
+	if(change >=0.5)
+	{
+		numpt50++;
+		change = change - 0.5;
+	}
+	if(change >= 0.2)
+	{
+		numpt20++;
+		change = change-0.2;
+	}
+	if(change >= 0.1)
+	{
+		 numpt10++;
+		 change = change - 0.1;
+	}
+	if(change >= 0.05)
+	{
+		numpt05++;
+		change = change - 0.05;
+	}
+	if(change >= 0.02)
+	{
+		numpt02++;
+		change = change - 0.02;
+	}
+	if(change >= 0.01)
+	{
+		numpt01++;
+		change = change - 0.01;
+	}
+}
+println("Your change should be as follows:");
+
+if(num50>0)
+{
+	println(num50 + " £50 notes");
+}
+if(num20>0)
+{
+	println(num20 + " £20 notes");
+}
+if(num10>0)
+{
+	println(num10 + " £10 notes");
+}
+if(num5>0)
+{
+	println(num5 + " £5 notes");
+}
+if(num2>0)
+{
+	println(num2 + " £2 coins");
+}
+if(num1>0)
+{
+	println(num1 + " £1 coins");
+}
+if(numpt50>0)
+{
+	println(numpt50 + " 50p coins");
+}
+if(numpt20>0)
+{
+	println(numpt20 + " 20p coins");
+}
+if(numpt10>0)
+{
+	println(numpt10 + " 10p coins");
+}
+if(numpt05>0)
+{
+	println(numpt05 + " 5p coins");
+}
+if(numpt02>0)
+{
+	println(numpt02 + " 2p coins");
+}
+if(numpt01>0)
+{
+	println(numpt01 + " 1p coins");
+}
+		
+	

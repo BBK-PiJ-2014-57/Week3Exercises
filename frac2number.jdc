@@ -1,0 +1,35 @@
+print("Please enter a value with commas and a decimal point");
+String input = readLine();
+String numinput = "";
+int inputlen = input.length();
+char test;
+boolean beforedec = true;
+double num = 0;
+double frac = 0;
+double fraccount = 0;
+for(int i = 0; i < inputlen; i++)
+{
+	test = input.charAt(i);
+	if(test != ',')
+	{
+		if(test != '.')
+		{
+			if(beforedec)
+			{
+				test = Character.parsechar(test);
+				num = num*10 + Integer.parseInt(test);
+			}
+			else
+			{
+				fraccount++;
+				frac = frac * 10 + test;
+			}
+		}
+		else
+		{
+			beforedec = false;
+		}
+	}
+}
+num = num + (frac/(10^fraccount));
+println(num/2);

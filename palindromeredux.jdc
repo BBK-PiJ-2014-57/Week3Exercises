@@ -1,0 +1,32 @@
+println("Please enter some text to check for a relaxes Palindrome");
+String input = readLine();
+String reduxinput = "";
+int inputlen = input.length();
+char text;
+for(int i = 0; i<inputlen; i++)
+{
+	text = input.charAt(i);
+	if(Character.isLetter(text))
+	{
+		text = Character.toLowerCase(text);
+		reduxinput = reduxinput + text;
+	}
+}
+int totestlen = reduxinput.length();
+boolean isPalin = true;
+String totest = reduxinput;
+for(int i = 0; i<totestlen; i++)
+{
+	if(totest.charAt(i) != totest.charAt(totestlen - 1- i))
+	{
+		isPalin = false;
+	}
+}
+if(isPalin)
+{
+	println("It is a relaxed palindrome");
+}
+else
+{
+	println("Hard luck. Is isn't a relaxed palindrome");
+}	

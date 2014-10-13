@@ -1,0 +1,28 @@
+println("Please enter some text");
+String input = readLine();
+int inputcount = input.length();
+int nume = 0;
+char test;
+for(int i=0; i<inputcount;i++)
+{
+	test = input.charAt(i);
+	if(test =='e')
+	{
+		nume++;
+	}
+}
+println("There are " + nume + " e's");
+println("Now enter a character I can test with");
+String newstr = readLine();
+char newch;
+newch = newstr.charAt(0);
+nume=0;
+for(int j=0; j<inputcount;j++)
+{
+	test = input.charAt(j);
+	if(test == newch)
+	{
+		nume++;
+	}
+}
+println("There are " + nume + " " + newch +"'s");

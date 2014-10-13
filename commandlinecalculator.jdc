@@ -1,0 +1,78 @@
+println("Welcome to the Command Line Calculator. Please enter an equation for me to solve:");
+String equation = readLine();
+int eqlen = equation.length();
+String subeq;
+char operation = 'a';
+int operationloc = 0;
+for(int check = 1; check<eqlen; check++)
+{
+	
+	subeq = equation.substring(check-1, check);
+	
+	if(subeq.equals("+"))
+	{
+		operation = '+';
+		operationloc = check-1;
+		break;
+	}
+	if(subeq.equals("-"))
+	{
+		operation = '-';
+		operationloc = check-1;
+		break;
+	}
+	if(subeq.equals("*"))
+	{
+		operation = '*';
+		operationloc = check-1;
+		break;
+	}
+	if(subeq.equals("/"))
+	{
+		operation = '/';
+		operationloc = check-1;
+		break;
+	}
+}
+
+String num1 = equation.substring(0, operationloc);
+
+String num2 = equation.substring(operationloc+1);
+
+double fstdub = Double.parseDouble(num1);
+
+double snddub = Double.parseDouble(num2);
+
+switch(operation)
+{
+	
+	case '+':
+	println(fstdub + snddub);
+	
+	break;
+	
+	
+	case '-':
+	println(fstdub - snddub);
+	break;
+	
+	
+	case '*':
+	println(fstdub*snddub);
+	break;
+	
+	
+	case '/':
+	if(snddub == 0)
+	{
+		while(snddub == 0)
+		{
+			println("Cannot divide by 0. Please enter another number:");
+			String second = readLine();
+			snddub = Double.parseDouble(second);
+		}
+	}
+	
+	println(fstdub / snddub);
+	break;
+}
